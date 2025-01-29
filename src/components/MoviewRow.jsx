@@ -1,63 +1,8 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Play, Plus, ThumbsUp, Info } from 'lucide-react';
+import React, { useState } from 'react';
+import { Play, Plus, ThumbsUp } from 'lucide-react';
 
 const MovieRow = ({ title, movies }) => {
-  const rowRef = useRef(null);
   const [isHovered, setIsHovered] = useState(null);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [showControls, setShowControls] = useState(false);
-  const [itemWidth, setItemWidth] = useState(200);
-
-  // Handle responsive item width
-  useEffect(() => {
-    const updateItemWidth = () => {
-      if (window.innerWidth < 640) {
-        setItemWidth(170); // Mobile
-      } else if (window.innerWidth < 768) {
-        setItemWidth(160); // Tablet small
-      } else if (window.innerWidth < 1024) {
-        setItemWidth(180); // Tablet
-      } else {
-        setItemWidth(255); // Desktop
-      }
-    };
-
-    updateItemWidth();
-    window.addEventListener('resize', updateItemWidth);
-    return () => window.removeEventListener('resize', updateItemWidth);
-  }, []);
-
-  // Check if can scroll
-  useEffect(() => {
-    const checkScroll = () => {
-      if (rowRef.current) {
-        const canScroll = rowRef.current.scrollWidth > rowRef.current.clientWidth;
-        setShowControls(canScroll);
-      }
-    };
-
-    checkScroll();
-    window.addEventListener('resize', checkScroll);
-    return () => window.removeEventListener('resize', checkScroll);
-  }, [movies]);
-
-  const scrollRow = (direction) => {
-    if (rowRef.current) {
-      const container = rowRef.current;
-      const scrollAmount = direction === 'left'
-        ? -container.clientWidth
-        : container.clientWidth;
-
-      const newScrollPosition = container.scrollLeft + scrollAmount;
-
-      container.scrollTo({
-        left: newScrollPosition,
-        behavior: 'smooth'
-      });
-
-      setScrollPosition(newScrollPosition);
-    }
-  };
 
   return (
     <div className="py-4 sm:py-6 md:py-8">
@@ -69,49 +14,14 @@ const MovieRow = ({ title, movies }) => {
         </button>
       </div>
 
-      <div className="relative group"
-        onMouseEnter={() => setShowControls(true)}
-        onMouseLeave={() => setShowControls(false)}>
-        {/* Scroll Buttons */}
-        {showControls && (
-          <>
-            <button
-              onClick={() => scrollRow('left')}
-              className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 
-              z-20 bg-black/80 hover:bg-black/90 
-              text-white rounded-full p-1 sm:p-2 
-              opacity-0 group-hover:opacity-100 
-              transition-all duration-300 hover:scale-110"
-            >
-              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8" />
-            </button>
-            <button
-              onClick={() => scrollRow('right')}
-              className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 
-              z-20 bg-black/80 hover:bg-black/90 
-              text-white rounded-full p-1 sm:p-2 
-              opacity-0 group-hover:opacity-100 
-              transition-all duration-300 hover:scale-110"
-            >
-              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8" />
-            </button>
-          </>
-        )}
-
-        {/* Movies Container */}
-        <div
-          ref={rowRef}
-          className="grid grid-cols-2 lg:grid-cols-6 overflow-x-scroll scrollbar-hide 
-          space-x-2 sm:space-x-3 md:space-x-2 px-4 md:px-12 space-y-2
-          scroll-smooth pb-4"
-          style={{ scrollbarWidth: 'none' }}
-        >
+      {/* Movies Grid Container */}
+      <div className="px-4 md:px-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-6 
+          gap-2 sm:gap-3 md:gap-4">
           {movies.map((movie) => (
             <div
               key={movie.id}
-              className="relative flex-shrink-0 transform transition-all duration-300 
-            hover:z-10"
-              style={{ width: `${itemWidth}px` }}
+              className="relative transform transition-all duration-300 hover:z-10"
               onMouseEnter={() => setIsHovered(movie.id)}
               onMouseLeave={() => setIsHovered(null)}
             >
@@ -126,9 +36,9 @@ const MovieRow = ({ title, movies }) => {
                 />
 
                 {/* Hover Overlay */}
-                <div className={`absolute inset-0 bg-black/60 flex flex-col 
+                <div className="absolute inset-0 bg-black/60 flex flex-col 
                   justify-end p-3 sm:p-4 text-white opacity-0 group-hover/item:opacity-100 
-                  transition-all duration-300`}>
+                  transition-all duration-300">
                   <h3 className="text-sm sm:text-base font-bold truncate mb-2">
                     {movie.title}
                   </h3>
@@ -163,20 +73,6 @@ const MovieRow = ({ title, movies }) => {
             </div>
           ))}
         </div>
-
-        {/* Gradient Shadows */}
-        {showControls && (
-          <>
-            <div className="absolute left-0 top-0 bottom-0 w-12 
-              bg-gradient-to-r from-netflix-black to-transparent 
-              pointer-events-none opacity-0 group-hover:opacity-100 
-              transition-opacity duration-300" />
-            <div className="absolute right-0 top-0 bottom-0 w-12 
-              bg-gradient-to-l from-netflix-black to-transparent 
-              pointer-events-none opacity-0 group-hover:opacity-100 
-              transition-opacity duration-300" />
-          </>
-        )}
       </div>
     </div>
   );

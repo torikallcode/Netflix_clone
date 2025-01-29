@@ -22,6 +22,9 @@ const mockMovies = {
         { id: 7, title: 'Movie 2', posterUrl: 'img/ls7.jpeg' },
         { id: 8, title: 'Movie 2', posterUrl: 'img/ls8.jpeg' },
         { id: 9, title: 'Movie 2', posterUrl: 'img/ls9.jpeg' },
+        { id: 10, title: 'Movie 2', posterUrl: 'img/ls10.jpg' },
+        { id: 11, title: 'Movie 2', posterUrl: 'img/ls11.jpg' },
+        { id: 12, title: 'Movie 2', posterUrl: 'img/ls12.jpg' },
 
         // Tambahkan lebih banyak film
       ]
