@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import HeroBanner from '../components/Hero';
 import MovieRow from '../components/MoviewRow';
-
+import Footer from '../components/Footer';
 const mockMovies = {
   heroMovie: {
     title: 'Stranger Things',
@@ -60,6 +60,7 @@ export const Home = () => {
           movies={row.movies}
         />
       ))}
+      <Footer />
     </div>
   );
 }
