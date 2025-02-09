@@ -1,18 +1,45 @@
 @import "tailwindcss";
 
 @theme {
-    --color-netflix-black: oklch(0.03 0 0);
-    --color-netflix-red: oklch(0.5 0.25 29);
-    --color-netflix-gray: oklch(0.2 0 0);
+  /* Colors */
+  --color-netflix-black: oklch(0.03 0 0);
+  --color-netflix-red: oklch(0.5 0.25 29);
+  --color-netflix-gray: oklch(0.2 0 0);
+  
+  /* Gradients */
+  --color-netflix-gradient: linear-gradient(
+    to top,
+    rgb(from var(--color-netflix-black) r g b / 0%) 0%,
+    rgb(from var(--color-netflix-gray) r g b / 60%) 60%,
+    rgb(from var(--color-netflix-black) r g b / 0%) 100%
+  );
+  
+  /* Fonts */
+  --font-roboto: "Roboto", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  
+  /* Animations */
+  --animation-marquee-left: marquee-left 30s linear infinite;
+  --animation-marquee-right: marquee-right 30s linear infinite;
+  
+  @keyframes marquee-left {
+    from { transform: translateX(0%); }
+    to { transform: translateX(-100%); }
+  }
+  
+  @keyframes marquee-right {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0%); }
+  }
+}
 
-
-    --color-netflix-gradient: linear-gradient(
-        to top,
-        var(--color-netflix-black-transparent) 0%,
-        var(--color-netflix-gray-transparent) 60%,
-        var(--color-netflix-black-transparent) 100%
-    );
-
-    --font-roboto: "Roboto", "sans-serif";
-    --font-poppins: "Poppins", "sans-serif";
-    }
+/* Utility classes */
+@layer utilities {
+  .animate-marquee-left {
+    animation: var(--animation-marquee-left);
+  }
+  
+  .animate-marquee-right {
+    animation: var(--animation-marquee-right);
+  }
+}
