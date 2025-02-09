@@ -4,6 +4,9 @@ import HeroBanner from '../components/Hero';
 import MovieRow from '../components/MoviewRow';
 import Footer from '../components/Footer';
 import HeartText from '../components/HeartText';
+import { HeartIcon } from 'lucide-react';
+import { Heart } from '../components/HeartIcon';
+import { AboutSection } from '../components/AboutSection';
 const mockMovies = {
   heroMovie: {
     title: 'Stranger Things',
@@ -61,7 +64,10 @@ export const Home = () => {
           movies={row.movies}
         />
       ))}
-      <HeartText />
+      <div className='py-16'>
+        <AboutSection />
+
+      </div>
       <Footer />
     </div>
   );
