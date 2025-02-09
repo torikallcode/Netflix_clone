@@ -51,22 +51,6 @@ const Footer = () => {
       title: 'Contact Us',
       href: '#'
     },
-    {
-      title: 'Speed Test',
-      href: '#'
-    },
-    {
-      title: 'Legal Guarantee',
-      href: '#'
-    },
-    {
-      title: 'Netflix Originals',
-      href: '#'
-    },
-    {
-      title: 'Only on Netflix',
-      href: '#'
-    }
   ];
 
   return (
@@ -115,16 +99,6 @@ const Footer = () => {
           </p>
           <p className="leading-relaxed">
             Representative: Netflix Services Korea Ltd.
-          </p>
-          <p className="leading-relaxed">
-            Address: 20F, Tower A, Centropolis Building 26, Ujeongguk-ro,
-            Jongno-gu, Seoul, 03161 Republic of Korea
-          </p>
-          <p className="leading-relaxed">
-            Business registration number: 165-87-00119
-          </p>
-          <p className="leading-relaxed">
-            Hosted by: Amazon Web Services Inc.
           </p>
         </div>
       </div>
