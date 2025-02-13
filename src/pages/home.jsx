@@ -9,26 +9,26 @@ import { Heart } from '../components/HeartIcon';
 import { AboutSection } from '../components/AboutSection';
 const mockMovies = {
   heroMovie: {
-    title: 'Stranger Things',
+    title: 'Happy birthday - a Short But Meaningful Splinter of Time',
     overview: 'When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.',
-    backdropUrl: 'img/hero.jpg'
+    backdropUrl: 'img/pic18.jpg'
   },
   rows: [
     {
       title: 'Trending Now',
       movies: [
-        { id: 1, title: 'Movie 1', posterUrl: 'img/ls1.jpeg' },
-        { id: 2, title: 'Movie 2', posterUrl: 'img/ls2.jpeg' },
-        { id: 3, title: 'Movie 2', posterUrl: 'img/ls3.jpeg' },
-        { id: 4, title: 'Movie 2', posterUrl: 'img/ls4.jpeg' },
-        { id: 5, title: 'Movie 2', posterUrl: 'img/ls5.jpeg' },
-        { id: 6, title: 'Movie 2', posterUrl: 'img/ls6.jpeg' },
-        { id: 7, title: 'Movie 2', posterUrl: 'img/ls7.jpeg' },
-        { id: 8, title: 'Movie 2', posterUrl: 'img/ls8.jpeg' },
-        { id: 9, title: 'Movie 2', posterUrl: 'img/ls9.jpeg' },
-        { id: 10, title: 'Movie 2', posterUrl: 'img/ls10.jpg' },
-        { id: 11, title: 'Movie 2', posterUrl: 'img/ls11.jpg' },
-        { id: 12, title: 'Movie 2', posterUrl: 'img/ls12.jpg' },
+        { id: 1, title: 'Movie 1', posterUrl: 'img/pic1.jpg' },
+        { id: 2, title: 'Movie 2', posterUrl: 'img/pic2.jpg' },
+        { id: 3, title: 'Movie 2', posterUrl: 'img/pic3.jpg' },
+        { id: 4, title: 'Movie 2', posterUrl: 'img/pic4.jpg' },
+        { id: 5, title: 'Movie 2', posterUrl: 'img/pic5.jpg' },
+        { id: 6, title: 'Movie 2', posterUrl: 'img/pic6.jpg' },
+        { id: 7, title: 'Movie 2', posterUrl: 'img/pic7.jpg' },
+        { id: 8, title: 'Movie 2', posterUrl: 'img/pic8.jpg' },
+        { id: 9, title: 'Movie 2', posterUrl: 'img/pic9.jpg' },
+        { id: 10, title: 'Movie 2', posterUrl: 'img/pic10.jpg' },
+        { id: 11, title: 'Movie 2', posterUrl: 'img/pic11.jpg' },
+        { id: 12, title: 'Movie 2', posterUrl: 'img/pic14.jpg' },
 
         // Tambahkan lebih banyak film
       ]
