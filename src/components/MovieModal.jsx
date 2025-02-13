@@ -74,7 +74,7 @@ const MovieModal = ({ movie, onClose }) => {
             className="absolute top-4 right-4 z-10 bg-black/50 rounded-full p-1.5 sm:p-2
             hover:bg-black/70 transform hover:scale-110 transition-all duration-300"
           >
-            <X className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
+            <X className="w-4 h-4 sm:w-6 sm:h-6 text-white cursor-pointer" />
           </button>
 
           {/* Trailer Controls */}
