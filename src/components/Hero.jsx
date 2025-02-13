@@ -24,11 +24,11 @@ const HeroBanner = ({ movie }) => {
   return (
     <>
       <div
-        className="relative h-[85vh] sm:h-[75vh] md:min-h-screen bg-cover bg-center text-white font-poppins overflow-hidden"
+        className="relative h-[85vh] sm:h-[75vh] md:min-h-screen object-cover text-white font-poppins overflow-hidden"
         style={{
           backgroundImage: `url('${movie?.backdropUrl}')`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center 20%'
+          backgroundPosition: 'center 50%',
         }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -37,7 +37,7 @@ const HeroBanner = ({ movie }) => {
         <div
           className={`absolute inset-0 transition-opacity duration-700
             bg-gradient-to-t lg:bg-gradient-to-r from-netflix-black/95 via-netflix-black/60 to-transparent
-            sm:from-netflix-black/100 sm:via-netflix-gray/40 sm:to-transparent`}
+            sm:from-netflix-black/90 sm:via-netflix-gray/30 sm:to-transparent`}
         />
 
         {/* Optional: Video background for desktop */}
@@ -55,11 +55,11 @@ const HeroBanner = ({ movie }) => {
         )}
 
         {/* Content container with animations */}
-        <div className="relative z-10 h-full flex flex-col justify-end sm:justify-center px-6 sm:px-8 md:px-16 pb-20 sm:pb-0">
-          <div className="max-w-4xl">
+        <div className="relative z-10 h-full flex flex-col justify-end lg:justify-center px-6 sm:px-8 md:px-16 pb-20 sm:pb-20 lg:pb-0">
+          <div className="max-w-4xl sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-3xl">
             {/* Animated title */}
             <h1
-              className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-3 sm:mb-4
+              className={`text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl font-semibold mb-3 sm:mb-4 tracking-wider lg:max-w-2xl
                 transform transition-all duration-700 ${isVisible
                   ? 'translate-y-0 opacity-100'
                   : 'translate-y-10 opacity-0'
@@ -100,7 +100,7 @@ const HeroBanner = ({ movie }) => {
                 onClick={openModal}
                 className="bg-white text-black px-6 sm:px-8 py-2 sm:py-3 rounded-md 
                 flex items-center space-x-2 hover:bg-opacity-90 transform hover:scale-105 
-                transition duration-300 shadow-lg"
+                transition duration-300 shadow-lg cursor-pointer"
               >
                 <Play className="w-5 h-5 sm:w-6 sm:h-6" />
                 <span className="text-sm sm:text-base font-semibold">Play</span>
@@ -109,7 +109,7 @@ const HeroBanner = ({ movie }) => {
               <button
                 className="bg-gray-600/80 backdrop-blur-sm text-white px-6 sm:px-8 py-2 sm:py-3 
                 rounded-md flex items-center space-x-2 hover:bg-gray-700/80 transform hover:scale-105 
-                transition duration-300 shadow-lg"
+                transition duration-300 shadow-lg cursor-pointer"
               >
                 <Info className="w-5 h-5 sm:w-6 sm:h-6" />
                 <span className="text-sm sm:text-base font-semibold">More Info</span>
