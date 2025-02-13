@@ -19,7 +19,7 @@ export const AboutSection = () => {
             </div>
           </div>
           <div className='w-full h-[400px] bg-center bg-cover'
-            style={{ backgroundImage: `url('img/ls11.jpg')` }}
+            style={{ backgroundImage: `url('img/pic19.jpg')` }}
           >
 
           </div>
