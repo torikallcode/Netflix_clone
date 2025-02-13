@@ -37,12 +37,12 @@ const Header = () => {
       <div className="relative flex justify-between items-center px-4 md:px-8 lg:px-12 py-4">
         {/* Left side - Logo and Navigation */}
         <div className="flex items-center">
-          {/* <img
-            src="/netflix-logo.png"
+          <img
+            src="img/netflix.png"
             alt="Netflix Logo"
-            className="h-6 md:h-8 transition-transform duration-300 hover:scale-105"
-          /> */}
-          <h1 className='text-2xl md:text-3xl font-bold font-poppins uppercase text-netflix-red'>NETFLiX</h1>
+            className="h-13 md:h-16 lg:h-16 transition-transform duration-300 hover:scale-105"
+          />
+          {/* <h1 className='text-2xl md:text-3xl font-bold font-poppins uppercase text-netflix-red'>NETFLiX</h1> */}
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex ml-8 text-white space-x-6">
